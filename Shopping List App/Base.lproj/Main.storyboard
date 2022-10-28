@@ -58,6 +58,9 @@
                             </textField>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="pPO-59-z4C">
                                 <rect key="frame" x="690" y="130" width="94" height="32"/>
+                                <connections>
+                                    <action selector="stepperQuantity_onChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="Fam-Q1-RsA"/>
+                                </connections>
                             </stepper>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1SF-98-NlI">
                                 <rect key="frame" x="60" y="169" width="200" height="32"/>
@@ -129,12 +132,21 @@
                             </label>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="ekR-Cz-o2E">
                                 <rect key="frame" x="690" y="209" width="94" height="32"/>
+                                <connections>
+                                    <action selector="stepperQuantity_onChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="lsG-XG-XQb"/>
+                                </connections>
                             </stepper>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="m5z-XU-Xp0">
                                 <rect key="frame" x="690" y="249" width="94" height="32"/>
+                                <connections>
+                                    <action selector="stepperQuantity_onChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="7bs-Er-x2e"/>
+                                </connections>
                             </stepper>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Y1u-kv-BzM">
                                 <rect key="frame" x="690" y="289" width="94" height="32"/>
+                                <connections>
+                                    <action selector="stepperQuantity_onChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="SYL-SF-pXF"/>
+                                </connections>
                             </stepper>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fBh-U6-OhJ">
                                 <rect key="frame" x="60" y="329" width="56" height="31"/>
@@ -142,6 +154,9 @@
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Save"/>
+                                <connections>
+                                    <action selector="btnSave_onTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xAY-6l-D29"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DFN-sZ-ZiV">
                                 <rect key="frame" x="259" y="129" width="205" height="32"/>
@@ -194,6 +209,9 @@
                             </label>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="H5v-F6-YBU">
                                 <rect key="frame" x="690" y="169" width="94" height="32"/>
+                                <connections>
+                                    <action selector="stepperQuantity_onChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="DKk-cF-tiP"/>
+                                </connections>
                             </stepper>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1fW-qa-xto">
                                 <rect key="frame" x="715" y="329" width="69" height="31"/>
@@ -201,6 +219,9 @@
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Cancel"/>
+                                <connections>
+                                    <action selector="btnCancel_onTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NKI-VY-N0x"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quantity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tWn-QR-AcM">
                                 <rect key="frame" x="442" y="100" width="65" height="21"/>
@@ -330,6 +351,24 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="labelQuantity1" destination="rSm-cc-fCQ" id="uhh-qa-p6V"/>
+                        <outlet property="labelQuantity2" destination="ezO-LD-QE5" id="Ngk-aF-wVd"/>
+                        <outlet property="labelQuantity3" destination="WGG-pt-JRu" id="oZP-gn-7xU"/>
+                        <outlet property="labelQuantity4" destination="rgM-lO-GA8" id="iCj-1n-QE8"/>
+                        <outlet property="labelQuantity5" destination="ros-TR-0X9" id="aoO-gQ-jDX"/>
+                        <outlet property="stepperQuantity1" destination="pPO-59-z4C" id="jHa-Vf-a7Y"/>
+                        <outlet property="stepperQuantity2" destination="H5v-F6-YBU" id="kh7-Er-Hll"/>
+                        <outlet property="stepperQuantity3" destination="ekR-Cz-o2E" id="d4Q-Cc-DbW"/>
+                        <outlet property="stepperQuantity4" destination="m5z-XU-Xp0" id="feP-tb-OgR"/>
+                        <outlet property="stepperQuantity5" destination="Y1u-kv-BzM" id="FpC-Va-WfO"/>
+                        <outlet property="textItem1" destination="VIY-jx-4Qs" id="lII-Ex-vXg"/>
+                        <outlet property="textItem2" destination="1SF-98-NlI" id="Szy-f5-QvD"/>
+                        <outlet property="textItem3" destination="Jzd-uA-Qgv" id="KKN-Z1-KGO"/>
+                        <outlet property="textItem4" destination="Yms-hQ-BiV" id="Rkd-JG-uq6"/>
+                        <outlet property="textItem5" destination="VcG-nI-nNH" id="zfA-sM-lB1"/>
+                        <outlet property="textShoppingListName" destination="r9Z-dO-vnl" id="iEB-dD-vPU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
