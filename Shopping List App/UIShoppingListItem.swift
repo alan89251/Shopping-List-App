@@ -1,8 +1,10 @@
 //
 //  UIShoppingListItem.swift
 //  Shopping List App
-//
-//  Created by bee on 27/10/2022.
+//  Author: Chun Fung Suen
+//  Student ID: 301277969
+//  Date: 27/10/2022
+//  Changes: Create the class UIShoppingListItem
 //
 
 import Foundation

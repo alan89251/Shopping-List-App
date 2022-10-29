@@ -1,15 +1,18 @@
 //
 //  ViewController.swift
 //  Shopping List App
-//
-//  Created by alan on 27/10/2022.
+//  Author: Chun Fung Suen
+//  Student ID: 301277969
+//  Date: 27/10/2022
+//  Changes: Implement the logic for the UI controls
 //
 
 import UIKit
 
+/// ViewController of the shopping list content view
 class ViewController: UIViewController {
     private var savedShoppingList = ShoppingList()
-    private var uiShoppinglist: [Int: UIShoppingListItem] = [:] /// KEY: row number
+    private var uiShoppinglist: [Int: UIShoppingListItem] = [:] /// KEY: row number. Store the row of ui controls of list items
     
     @IBOutlet weak var textShoppingListName: UITextField!
     @IBOutlet weak var textItem1: UITextField!
@@ -40,7 +43,7 @@ class ViewController: UIViewController {
         initUiShoppinglist(shoppingList: savedShoppingList)
     }
     
-    /// init the value of UIs and save their references to the list
+    /// init the values of UIs and save their references to the "uiShoppinglist"
     private func initUiShoppinglist(shoppingList: ShoppingList) {
         initItemRow(rowNo: 0, textName: textItem1, labelQuantity: labelQuantity1, stepperQuantity: stepperQuantity1, shoppingListItem: shoppingList.getItemByRow(rowNo: 0)!)
         initItemRow(rowNo: 1, textName: textItem2, labelQuantity: labelQuantity2, stepperQuantity: stepperQuantity2, shoppingListItem: shoppingList.getItemByRow(rowNo: 1)!)
@@ -49,7 +52,7 @@ class ViewController: UIViewController {
         initItemRow(rowNo: 4, textName: textItem5, labelQuantity: labelQuantity5, stepperQuantity: stepperQuantity5, shoppingListItem: shoppingList.getItemByRow(rowNo: 4)!)
     }
     
-    /// init an item row that set its initial values and save its reference to list
+    /// init an item row that set its initial values and save its reference to "uiShoppinglist"
     private func initItemRow(rowNo: Int, textName: UITextField, labelQuantity: UILabel, stepperQuantity: UIStepper, shoppingListItem: ShoppingListItem) {
         stepperQuantity.minimumValue = 0
         var item = UIShoppingListItem(textName: textName, labelQuantity: labelQuantity, stepperQuantity: stepperQuantity)
@@ -64,7 +67,7 @@ class ViewController: UIViewController {
         item.setQuantity(quantity: quantity)
     }
     
-    /// change the item quantity according to the stepper value
+    /// when stepper value changes, change the related item quantity according to the stepper value
     @IBAction func stepperQuantity_onChange(_ sender: UIStepper) {
         if (sender == stepperQuantity1) {
             uiShoppinglist[0]!.updateLabelQuantityFromStepper()
@@ -83,8 +86,9 @@ class ViewController: UIViewController {
         }
     }
     
-    /// save the shopping list
+    /// save the shopping list to the user perference and print it in the debug console
     @IBAction func btnSave_onTouchUpInside(_ sender: UIButton) {
+        // set the values of the saved shopping list by the values got from the UIs
         savedShoppingList.setName(name: textShoppingListName.text!)
         for i in 0 ... uiShoppinglist.count-1 {
             var item: ShoppingListItem! = savedShoppingList.getItemByRow(rowNo: i)
@@ -102,7 +106,7 @@ class ViewController: UIViewController {
         }
     }
     
-    /// reset the shopping list
+    /// reset the values of the UIs of the shopping list to the values of the saved shopping list
     @IBAction func btnCancel_onTouchUpInside(_ sender: UIButton) {
         textShoppingListName.text = savedShoppingList.getName()
         for i in 0 ... 4 {

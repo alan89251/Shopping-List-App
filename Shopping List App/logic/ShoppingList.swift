@@ -1,8 +1,10 @@
 //
 //  ShoppingList.swift
 //  Shopping List App
-//
-//  Created by bee on 27/10/2022.
+//  Author: Chun Fung Suen
+//  Student ID: 301277969
+//  Date: 27/10/2022
+//  Changes: create the class ShoppingList
 //
 
 import Foundation
@@ -38,7 +40,7 @@ class ShoppingList: Sequence {
         return items[rowNo]
     }
     
-    /// get the iterater for iterating all items in the list
+    /// get the iterator for iterating all items in the list
     public func makeIterator() -> IndexingIterator<Array<ShoppingListItem>> {
         return items.makeIterator()
     }
