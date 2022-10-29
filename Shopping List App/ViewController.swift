@@ -41,6 +41,7 @@ class ViewController: UIViewController {
     
     /// init the values of UIs and save their references to the "uiShoppinglist"
     private func initUiShoppinglist(shoppingList: ShoppingList) {
+        textShoppingListName.text = shoppingList.getName()
         initItemRow(rowNo: 0, textName: textItem1, labelQuantity: labelQuantity1, stepperQuantity: stepperQuantity1, shoppingListItem: shoppingList.getItemByRow(rowNo: 0)!)
         initItemRow(rowNo: 1, textName: textItem2, labelQuantity: labelQuantity2, stepperQuantity: stepperQuantity2, shoppingListItem: shoppingList.getItemByRow(rowNo: 1)!)
         initItemRow(rowNo: 2, textName: textItem3, labelQuantity: labelQuantity3, stepperQuantity: stepperQuantity3, shoppingListItem: shoppingList.getItemByRow(rowNo: 2)!)
@@ -108,7 +109,7 @@ class ViewController: UIViewController {
     /// reset the values of the UIs of the shopping list to the values of the saved shopping list
     @IBAction func btnCancel_onTouchUpInside(_ sender: UIButton) {
         textShoppingListName.text = savedShoppingList.getName()
-        var i = 1
+        var i = 0
         for item in savedShoppingList {
             setItemRow(rowNo: i, name: item.getName(), quantity: item.getQuantity())
             i += 1
