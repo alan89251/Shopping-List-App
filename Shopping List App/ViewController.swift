@@ -12,6 +12,7 @@ import UIKit
 /// ViewController of the shopping list content view
 class ViewController: UIViewController {
     private var savedShoppingList = ShoppingList()
+    private let shoppingListRepository = ShoppingListRepository()
     private var uiShoppinglist: [Int: UIShoppingListItem] = [:] /// KEY: row number. Store the row of ui controls of list items
     
     @IBOutlet weak var textShoppingListName: UITextField!
@@ -34,12 +35,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        savedShoppingList.setName(name: "Shopping List")
-        savedShoppingList.addItem(name: "", quantity: 0)
-        savedShoppingList.addItem(name: "", quantity: 0)
-        savedShoppingList.addItem(name: "", quantity: 0)
-        savedShoppingList.addItem(name: "", quantity: 0)
-        savedShoppingList.addItem(name: "", quantity: 0)
+        savedShoppingList = shoppingListRepository.load()
         initUiShoppinglist(shoppingList: savedShoppingList)
     }
     
@@ -95,6 +91,7 @@ class ViewController: UIViewController {
             item.setName(name: uiShoppinglist[i]!.getName())
             item.setQuantity(quantity: uiShoppinglist[i]!.getQuantity())
         }
+        shoppingListRepository.save(shoppingList: savedShoppingList)
         printShoppingListInDebugConsole(shoppingList: savedShoppingList)
     }
     
@@ -102,16 +99,19 @@ class ViewController: UIViewController {
     private func printShoppingListInDebugConsole(shoppingList: ShoppingList) {
         print("Shopping list name: " + shoppingList.getName())
         for item in shoppingList {
-            print("Item: " + item.getName() + "\t" + "Quantity: " + String(item.getQuantity()))
+            if (item.getName() != "") {
+                print("Item: " + item.getName() + "\t" + "Quantity: " + String(item.getQuantity()))
+            }
         }
     }
     
     /// reset the values of the UIs of the shopping list to the values of the saved shopping list
     @IBAction func btnCancel_onTouchUpInside(_ sender: UIButton) {
         textShoppingListName.text = savedShoppingList.getName()
-        for i in 0 ... 4 {
-            let item: ShoppingListItem! = savedShoppingList.getItemByRow(rowNo: i)
+        var i = 1
+        for item in savedShoppingList {
             setItemRow(rowNo: i, name: item.getName(), quantity: item.getQuantity())
+            i += 1
         }
     }
 }

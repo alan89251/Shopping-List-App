@@ -16,6 +16,7 @@
 		91C50BBC290B1E84007A4BE2 /* ShoppingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C50BBB290B1E84007A4BE2 /* ShoppingList.swift */; };
 		91C50BBE290B1EBF007A4BE2 /* ShoppingListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C50BBD290B1EBF007A4BE2 /* ShoppingListItem.swift */; };
 		91C50BC0290B2CC0007A4BE2 /* UIShoppingListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C50BBF290B2CC0007A4BE2 /* UIShoppingListItem.swift */; };
+		91FC19DD290D069100A73D74 /* ShoppingListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FC19DC290D069100A73D74 /* ShoppingListRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		91C50BBB290B1E84007A4BE2 /* ShoppingList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingList.swift; sourceTree = "<group>"; };
 		91C50BBD290B1EBF007A4BE2 /* ShoppingListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListItem.swift; sourceTree = "<group>"; };
 		91C50BBF290B2CC0007A4BE2 /* UIShoppingListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIShoppingListItem.swift; sourceTree = "<group>"; };
+		91FC19DC290D069100A73D74 /* ShoppingListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 			children = (
 				91C50BBB290B1E84007A4BE2 /* ShoppingList.swift */,
 				91C50BBD290B1EBF007A4BE2 /* ShoppingListItem.swift */,
+				91FC19DC290D069100A73D74 /* ShoppingListRepository.swift */,
 			);
 			path = logic;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 				91C50BBE290B1EBF007A4BE2 /* ShoppingListItem.swift in Sources */,
 				91C50BC0290B2CC0007A4BE2 /* UIShoppingListItem.swift in Sources */,
 				910A698F290A4A110068C5CA /* SceneDelegate.swift in Sources */,
+				91FC19DD290D069100A73D74 /* ShoppingListRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
