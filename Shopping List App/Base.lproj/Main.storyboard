@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_0" orientation="landscape" appearance="light"/>
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -13,17 +12,17 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Shopping_List_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="844" height="390"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Shopping List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lV0-YX-QzF">
-                                <rect key="frame" x="60" y="0.0" width="724" height="21"/>
+                                <rect key="frame" x="16" y="44" width="358" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter New List Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sms-1b-S2A">
-                                <rect key="frame" x="60" y="29" width="160" height="21"/>
+                                <rect key="frame" x="16" y="73" width="160" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="cPx-pe-C9b"/>
                                 </constraints>
@@ -32,17 +31,34 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Shopping List" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r9Z-dO-vnl">
-                                <rect key="frame" x="60" y="58" width="200" height="34"/>
+                                <rect key="frame" x="16" y="102" width="200" height="34"/>
                                 <color key="backgroundColor" red="0.74117647058823533" green="0.74117647058823533" blue="0.74117647058823533" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="400" id="IkQ-wa-mTQ"/>
                                     <constraint firstAttribute="width" constant="200" id="LOt-Iv-gQG"/>
                                 </constraints>
                                 <color key="textColor" red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="IkQ-wa-mTQ"/>
+                                        <exclude reference="LOt-Iv-gQG"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="IkQ-wa-mTQ"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="LOt-Iv-gQG"/>
+                                    </mask>
+                                </variation>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter New List item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wAU-vN-wHF">
-                                <rect key="frame" x="60" y="100" width="148" height="21"/>
+                                <rect key="frame" x="16" y="144" width="148" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="148" id="UbY-Tk-15d"/>
                                 </constraints>
@@ -51,64 +67,149 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VIY-jx-4Qs">
-                                <rect key="frame" x="60" y="129" width="200" height="32"/>
+                                <rect key="frame" x="16" y="173" width="200" height="32"/>
                                 <color key="backgroundColor" red="0.74117647058823533" green="0.74117647058823533" blue="0.74117647058823533" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="2uA-vR-NRl"/>
+                                    <constraint firstAttribute="width" constant="400" id="Oec-Rf-nfl"/>
                                 </constraints>
                                 <color key="textColor" red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="2uA-vR-NRl"/>
+                                        <exclude reference="Oec-Rf-nfl"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Oec-Rf-nfl"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="2uA-vR-NRl"/>
+                                    </mask>
+                                </variation>
                             </textField>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="pPO-59-z4C">
-                                <rect key="frame" x="690" y="130" width="94" height="32"/>
+                                <rect key="frame" x="280" y="174" width="94" height="32"/>
                                 <color key="backgroundColor" red="0.47450980392156861" green="0.33333333333333331" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="stepperQuantity_onChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="Fam-Q1-RsA"/>
                                 </connections>
                             </stepper>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1SF-98-NlI">
-                                <rect key="frame" x="60" y="169" width="200" height="32"/>
+                                <rect key="frame" x="16" y="213" width="200" height="32"/>
                                 <color key="backgroundColor" red="0.74117647058823533" green="0.74117647058823533" blue="0.74117647058823533" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="a4d-ZY-mDR"/>
+                                    <constraint firstAttribute="width" constant="400" id="yEe-a8-BGd"/>
                                 </constraints>
                                 <color key="textColor" red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="a4d-ZY-mDR"/>
+                                        <exclude reference="yEe-a8-BGd"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="yEe-a8-BGd"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="a4d-ZY-mDR"/>
+                                    </mask>
+                                </variation>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jzd-uA-Qgv">
-                                <rect key="frame" x="60" y="209" width="200" height="32"/>
+                                <rect key="frame" x="16" y="253" width="200" height="32"/>
                                 <color key="backgroundColor" red="0.74117647058823533" green="0.74117647058823533" blue="0.74117647058823533" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="400" id="7Iu-5p-efH"/>
                                     <constraint firstAttribute="width" constant="200" id="FiL-gL-GH5"/>
                                 </constraints>
                                 <color key="textColor" red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="7Iu-5p-efH"/>
+                                        <exclude reference="FiL-gL-GH5"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="7Iu-5p-efH"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="FiL-gL-GH5"/>
+                                    </mask>
+                                </variation>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yms-hQ-BiV">
-                                <rect key="frame" x="60" y="249" width="200" height="32"/>
+                                <rect key="frame" x="16" y="293" width="200" height="32"/>
                                 <color key="backgroundColor" red="0.74117647058823533" green="0.74117647058823533" blue="0.74117647058823533" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="400" id="EQA-nU-qQh"/>
                                     <constraint firstAttribute="width" constant="200" id="cPU-vM-Tr2"/>
                                 </constraints>
                                 <color key="textColor" red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="EQA-nU-qQh"/>
+                                        <exclude reference="cPU-vM-Tr2"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="EQA-nU-qQh"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="cPU-vM-Tr2"/>
+                                    </mask>
+                                </variation>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VcG-nI-nNH">
-                                <rect key="frame" x="60" y="289" width="200" height="32"/>
+                                <rect key="frame" x="16" y="333" width="200" height="32"/>
                                 <color key="backgroundColor" red="0.74117647058823533" green="0.74117647058823533" blue="0.74117647058823533" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="6ll-Xf-sqn"/>
+                                    <constraint firstAttribute="width" constant="400" id="fQC-nb-w0q"/>
                                 </constraints>
                                 <color key="textColor" red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="6ll-Xf-sqn"/>
+                                        <exclude reference="fQC-nb-w0q"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="fQC-nb-w0q"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="6ll-Xf-sqn"/>
+                                    </mask>
+                                </variation>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezO-LD-QE5">
-                                <rect key="frame" x="462" y="169" width="25" height="32"/>
+                                <rect key="frame" x="235" y="213" width="25" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="25" id="gEi-Qz-GeP"/>
                                 </constraints>
@@ -117,7 +218,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WGG-pt-JRu">
-                                <rect key="frame" x="462" y="209" width="25" height="32"/>
+                                <rect key="frame" x="235" y="253" width="25" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="25" id="wlR-t4-SKp"/>
                                 </constraints>
@@ -126,7 +227,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rgM-lO-GA8">
-                                <rect key="frame" x="462" y="249" width="25" height="32"/>
+                                <rect key="frame" x="235" y="293" width="25" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="25" id="Nwn-pP-doa"/>
                                 </constraints>
@@ -135,7 +236,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ros-TR-0X9">
-                                <rect key="frame" x="462" y="289" width="25" height="32"/>
+                                <rect key="frame" x="235" y="333" width="25" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="25" id="dKu-Hp-0RH"/>
                                 </constraints>
@@ -144,28 +245,28 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="ekR-Cz-o2E">
-                                <rect key="frame" x="690" y="209" width="94" height="32"/>
+                                <rect key="frame" x="280" y="253" width="94" height="32"/>
                                 <color key="backgroundColor" red="0.47450980392156861" green="0.33333333333333331" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="stepperQuantity_onChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="lsG-XG-XQb"/>
                                 </connections>
                             </stepper>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="m5z-XU-Xp0">
-                                <rect key="frame" x="690" y="249" width="94" height="32"/>
+                                <rect key="frame" x="280" y="293" width="94" height="32"/>
                                 <color key="backgroundColor" red="0.47450980392156861" green="0.33333333333333331" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="stepperQuantity_onChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="7bs-Er-x2e"/>
                                 </connections>
                             </stepper>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Y1u-kv-BzM">
-                                <rect key="frame" x="690" y="289" width="94" height="32"/>
+                                <rect key="frame" x="280" y="333" width="94" height="32"/>
                                 <color key="backgroundColor" red="0.47450980392156861" green="0.33333333333333331" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="stepperQuantity_onChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="SYL-SF-pXF"/>
                                 </connections>
                             </stepper>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fBh-U6-OhJ">
-                                <rect key="frame" x="60" y="329" width="56" height="31"/>
+                                <rect key="frame" x="16" y="373" width="56" height="31"/>
                                 <color key="backgroundColor" red="1" green="0.59607843137254901" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
@@ -175,47 +276,47 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DFN-sZ-ZiV">
-                                <rect key="frame" x="259" y="129" width="205" height="32"/>
+                                <rect key="frame" x="215" y="173" width="22" height="32"/>
                                 <color key="backgroundColor" red="0.84313725490000002" green="0.80000000000000004" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P6g-c1-ozM">
-                                <rect key="frame" x="259" y="169" width="205" height="32"/>
+                                <rect key="frame" x="215" y="213" width="22" height="32"/>
                                 <color key="backgroundColor" red="0.84313725490000002" green="0.80000000000000004" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1RU-Lx-cnn">
-                                <rect key="frame" x="259" y="209" width="205" height="32"/>
+                                <rect key="frame" x="215" y="253" width="22" height="32"/>
                                 <color key="backgroundColor" red="0.84313725490000002" green="0.80000000000000004" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="arV-U4-BcS">
-                                <rect key="frame" x="259" y="249" width="205" height="32"/>
+                                <rect key="frame" x="215" y="293" width="22" height="32"/>
                                 <color key="backgroundColor" red="0.84313725490000002" green="0.80000000000000004" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5GR-T9-pIi">
-                                <rect key="frame" x="259" y="289" width="205" height="32"/>
+                                <rect key="frame" x="215" y="333" width="22" height="32"/>
                                 <color key="backgroundColor" red="0.84313725490000002" green="0.80000000000000004" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="akl-St-Ryo">
-                                <rect key="frame" x="485" y="289" width="205" height="32"/>
+                                <rect key="frame" x="258" y="333" width="22" height="32"/>
                                 <color key="backgroundColor" red="0.84313725490000002" green="0.80000000000000004" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jhR-ci-Uk9">
-                                <rect key="frame" x="485" y="249" width="205" height="32"/>
+                                <rect key="frame" x="258" y="293" width="22" height="32"/>
                                 <color key="backgroundColor" red="0.84313725490000002" green="0.80000000000000004" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zfo-jb-Nu9">
-                                <rect key="frame" x="485" y="209" width="205" height="32"/>
+                                <rect key="frame" x="258" y="253" width="22" height="32"/>
                                 <color key="backgroundColor" red="0.84313725490000002" green="0.80000000000000004" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U0Q-yk-KvM">
-                                <rect key="frame" x="485" y="169" width="205" height="32"/>
+                                <rect key="frame" x="258" y="213" width="22" height="32"/>
                                 <color key="backgroundColor" red="0.84313725490000002" green="0.80000000000000004" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MKn-qv-Aob">
-                                <rect key="frame" x="485" y="129" width="205" height="32"/>
+                                <rect key="frame" x="258" y="173" width="22" height="32"/>
                                 <color key="backgroundColor" red="0.84313725490000002" green="0.80000000000000004" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSm-cc-fCQ">
-                                <rect key="frame" x="462" y="130" width="25" height="32"/>
+                                <rect key="frame" x="235" y="174" width="25" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="25" id="YLA-qc-3oV"/>
                                 </constraints>
@@ -224,14 +325,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="H5v-F6-YBU">
-                                <rect key="frame" x="690" y="169" width="94" height="32"/>
+                                <rect key="frame" x="280" y="213" width="94" height="32"/>
                                 <color key="backgroundColor" red="0.47450980392156861" green="0.33333333333333331" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="stepperQuantity_onChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="DKk-cF-tiP"/>
                                 </connections>
                             </stepper>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1fW-qa-xto">
-                                <rect key="frame" x="715" y="329" width="69" height="31"/>
+                                <rect key="frame" x="305" y="373" width="69" height="31"/>
                                 <color key="backgroundColor" red="0.36470588235294116" green="0.25098039215686274" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
@@ -241,7 +342,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quantity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tWn-QR-AcM">
-                                <rect key="frame" x="442" y="100" width="65" height="21"/>
+                                <rect key="frame" x="215" y="144" width="65" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="65" id="BGN-jG-0zz"/>
                                 </constraints>
@@ -263,7 +364,7 @@
                             <constraint firstItem="ros-TR-0X9" firstAttribute="leading" secondItem="5GR-T9-pIi" secondAttribute="trailing" constant="-2" id="Aa9-ew-n9G"/>
                             <constraint firstItem="1fW-qa-xto" firstAttribute="top" secondItem="Y1u-kv-BzM" secondAttribute="bottom" constant="8" id="B9Q-dY-YMN"/>
                             <constraint firstItem="pPO-59-z4C" firstAttribute="top" secondItem="tWn-QR-AcM" secondAttribute="bottom" constant="9" id="BWY-Sv-uUk"/>
-                            <constraint firstItem="tWn-QR-AcM" firstAttribute="leading" secondItem="wAU-vN-wHF" secondAttribute="trailing" constant="234" id="BeL-0g-Ge9"/>
+                            <constraint firstItem="tWn-QR-AcM" firstAttribute="leading" secondItem="wAU-vN-wHF" secondAttribute="trailing" constant="334" id="BeL-0g-Ge9"/>
                             <constraint firstItem="rgM-lO-GA8" firstAttribute="height" secondItem="Yms-hQ-BiV" secondAttribute="height" id="BrW-x6-jZB"/>
                             <constraint firstItem="Sms-1b-S2A" firstAttribute="top" secondItem="lV0-YX-QzF" secondAttribute="bottom" constant="8" symbolic="YES" id="ByN-9m-np6"/>
                             <constraint firstItem="pPO-59-z4C" firstAttribute="leading" secondItem="MKn-qv-Aob" secondAttribute="trailing" id="CdJ-zV-r9b"/>
@@ -392,12 +493,4 @@
             <point key="canvasLocation" x="130.76923076923077" y="81.753554502369667"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-    </resources>
 </document>
