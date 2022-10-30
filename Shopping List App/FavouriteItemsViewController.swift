@@ -9,23 +9,29 @@
 
 import UIKit
 
+/// View controller for favourite items
 class FavouriteItemsViewController: UIViewController {
-
+    private var favouriteItems: [String] = []
+    private var favouriteItemsRepository = FavouriteItemsRepository()
+    
+    @IBOutlet weak var labelFavouriteItems: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidAppear(_ animated: Bool) {
+        favouriteItems = favouriteItemsRepository.load()
+        showFavouriteItems() // show favourite items on the UI
     }
-    */
 
+    /// show favourite items on the UI
+    private func showFavouriteItems() {
+        var itemStr = ""
+        for item in favouriteItems {
+            itemStr.append(item)
+            itemStr.append("\n")
+        }
+        labelFavouriteItems.text = itemStr
+    }
 }

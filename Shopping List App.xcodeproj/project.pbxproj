@@ -19,6 +19,7 @@
 		91FC19DD290D069100A73D74 /* ShoppingListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FC19DC290D069100A73D74 /* ShoppingListRepository.swift */; };
 		91FE4669290E82DB00E60263 /* SwitchingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FE4668290E82DB00E60263 /* SwitchingViewController.swift */; };
 		91FE466B290E90D100E60263 /* FavouriteItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FE466A290E90D100E60263 /* FavouriteItemsViewController.swift */; };
+		91FE466D290E99AA00E60263 /* FavouriteItemsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91FE466C290E99AA00E60263 /* FavouriteItemsRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		91FC19DC290D069100A73D74 /* ShoppingListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListRepository.swift; sourceTree = "<group>"; };
 		91FE4668290E82DB00E60263 /* SwitchingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchingViewController.swift; sourceTree = "<group>"; };
 		91FE466A290E90D100E60263 /* FavouriteItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteItemsViewController.swift; sourceTree = "<group>"; };
+		91FE466C290E99AA00E60263 /* FavouriteItemsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteItemsRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				91C50BBB290B1E84007A4BE2 /* ShoppingList.swift */,
 				91C50BBD290B1EBF007A4BE2 /* ShoppingListItem.swift */,
 				91FC19DC290D069100A73D74 /* ShoppingListRepository.swift */,
+				91FE466C290E99AA00E60263 /* FavouriteItemsRepository.swift */,
 			);
 			path = logic;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91FE466D290E99AA00E60263 /* FavouriteItemsRepository.swift in Sources */,
 				91FE466B290E90D100E60263 /* FavouriteItemsViewController.swift in Sources */,
 				910A6991290A4A110068C5CA /* ShoppingListViewController.swift in Sources */,
 				91C50BBC290B1E84007A4BE2 /* ShoppingList.swift in Sources */,

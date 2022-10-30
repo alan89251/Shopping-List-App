@@ -12,7 +12,9 @@ import UIKit
 /// ViewController of the shopping list content view
 class ShoppingListViewController: UIViewController {
     private var savedShoppingList = ShoppingList()
+    private var favouriteItems: [String] = []
     private let shoppingListRepository = ShoppingListRepository()
+    private var favouriteItemsRepository = FavouriteItemsRepository()
     private var uiShoppinglist: [Int: UIShoppingListItem] = [:] /// KEY: row number. Store the row of ui controls of list items
     
     @IBOutlet weak var textShoppingListName: UITextField!
@@ -36,6 +38,7 @@ class ShoppingListViewController: UIViewController {
         super.viewDidLoad()
         
         savedShoppingList = shoppingListRepository.load()
+        favouriteItems = favouriteItemsRepository.load()
         initUiShoppinglist(shoppingList: savedShoppingList)
     }
     
@@ -136,7 +139,14 @@ class ShoppingListViewController: UIViewController {
     
     /// add item to the favourite list
     private func addItemToFavourite(item: UIShoppingListItem) {
-        
+        // do not add to favourite list if the item is already added to it
+        for favouriteItem in favouriteItems {
+            if (favouriteItem == item.getName()) {
+                return
+            }
+        }
+        favouriteItems.append(item.getName())
+        favouriteItemsRepository.save(favouriteItems: favouriteItems)
     }
 }
 
