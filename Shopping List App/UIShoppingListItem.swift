@@ -12,15 +12,40 @@ import UIKit
 
 /// Manage the UIs of an shopping list item
 class UIShoppingListItem {
+    private let rowNo: Int
     private let textName: UITextField
     private let labelQuantity: UILabel
     private let stepperQuantity: UIStepper
+    private let doSwipeLeftGesture: (UIShoppingListItem)->Void
+    private let doSwipeRightGesture: (UIShoppingListItem)->Void
     
     /// init the object
-    public init(textName: UITextField, labelQuantity: UILabel, stepperQuantity: UIStepper) {
+    /// doSwipeLeftGesture: callback that accept the UIShoppingListItem that getting the swipe left gesture
+    /// doSwipeRightGesture: callback that accept the UIShoppingListItem that getting the swipe right gesture
+    public init(rowNo: Int, textName: UITextField, labelQuantity: UILabel, stepperQuantity: UIStepper,
+                doSwipeLeftGesture: @escaping (UIShoppingListItem)->Void, doSwipeRightGesture: @escaping (UIShoppingListItem)->Void) {
+        self.rowNo = rowNo
         self.textName = textName
         self.labelQuantity = labelQuantity
         self.stepperQuantity = stepperQuantity
+        self.doSwipeLeftGesture = doSwipeLeftGesture
+        self.doSwipeRightGesture = doSwipeRightGesture
+        
+        // config UI properties
+        self.stepperQuantity.minimumValue = 0
+        // set gesture recognizer for the text field to detect swipe left gesture
+        var swipeLeftGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(onSwipeLeftGesture))
+        swipeLeftGestureRecognizer.direction = .left
+        self.textName.addGestureRecognizer(swipeLeftGestureRecognizer)
+        // set gesture recognizer for the text field to detect swipe right gesture
+        var swipeRightGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(onSwipeRightGesture))
+        swipeRightGestureRecognizer.direction = .right
+        self.textName.addGestureRecognizer(swipeRightGestureRecognizer)
+    }
+    
+    /// get the row no
+    public func getRowNo() -> Int {
+        return rowNo
     }
     
     /// set the item name
@@ -57,5 +82,15 @@ class UIShoppingListItem {
     /// update the quantity shown in the label by the quantity got from the stepper
     public func updateLabelQuantityFromStepper() {
         labelQuantity.text = String(Int(stepperQuantity.value))
+    }
+    
+    /// handle the swipe left gesture on the TextField of the item name
+    @objc private func onSwipeLeftGesture(sender: UISwipeGestureRecognizer) {
+        doSwipeLeftGesture(self)
+    }
+    
+    /// handle the swipe right gesture on the TextField of the item name
+    @objc private func onSwipeRightGesture(sender: UISwipeGestureRecognizer) {
+        doSwipeRightGesture(self)
     }
 }

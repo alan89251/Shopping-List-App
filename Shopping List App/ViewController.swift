@@ -51,8 +51,8 @@ class ViewController: UIViewController {
     
     /// init an item row that set its initial values and save its reference to "uiShoppinglist"
     private func initItemRow(rowNo: Int, textName: UITextField, labelQuantity: UILabel, stepperQuantity: UIStepper, shoppingListItem: ShoppingListItem) {
-        stepperQuantity.minimumValue = 0
-        var item = UIShoppingListItem(textName: textName, labelQuantity: labelQuantity, stepperQuantity: stepperQuantity)
+        var item = UIShoppingListItem(rowNo: rowNo, textName: textName, labelQuantity: labelQuantity, stepperQuantity: stepperQuantity,
+        doSwipeLeftGesture: deleteItem, doSwipeRightGesture: addItemToFavourite)
         uiShoppinglist[rowNo] = item
         setItemRow(rowNo: rowNo, name: shoppingListItem.getName(), quantity: shoppingListItem.getQuantity())
     }
@@ -114,6 +114,29 @@ class ViewController: UIViewController {
             setItemRow(rowNo: i, name: item.getName(), quantity: item.getQuantity())
             i += 1
         }
+    }
+    
+    /// delete item on the shopping list (both UI and saved list)
+    private func deleteItem(deletedItem: UIShoppingListItem) {
+        let deletedItemRowNo = deletedItem.getRowNo()
+        savedShoppingList.deleteItemByRow(rowNo: deletedItemRowNo) // delete the item from the saved list
+        savedShoppingList.addItem(name: "", quantity: 0) // add an empty item at the back of the saved list
+        shoppingListRepository.save(shoppingList: savedShoppingList) // save the updated list
+        
+        // shift the ui rows of the items below the deleted item
+        var i = deletedItemRowNo+1
+        while (i < uiShoppinglist.count) {
+            let item: UIShoppingListItem! = uiShoppinglist[i]
+            setItemRow(rowNo: i-1, name: item.getName(), quantity: item.getQuantity())
+            i+=1
+        }
+        // edge case. clear the last ui row
+        setItemRow(rowNo: uiShoppinglist.count-1, name: "", quantity: 0)
+    }
+    
+    /// add item to the favourite list
+    private func addItemToFavourite(item: UIShoppingListItem) {
+        
     }
 }
 

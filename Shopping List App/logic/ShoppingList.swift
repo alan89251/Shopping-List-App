@@ -40,6 +40,11 @@ class ShoppingList: Sequence {
         return items[rowNo]
     }
     
+    /// delete item by row no
+    public func deleteItemByRow(rowNo: Int) {
+        items.remove(at: rowNo)
+    }
+    
     /// get the iterator for iterating all items in the list
     public func makeIterator() -> IndexingIterator<Array<ShoppingListItem>> {
         return items.makeIterator()
