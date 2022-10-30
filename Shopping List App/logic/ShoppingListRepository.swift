@@ -1,5 +1,5 @@
 //
-//  ShoppingListLoader.swift
+//  ShoppingListRepository.swift
 //  Shopping List App
 //  Author: Chun Fung Suen
 //  Student ID: 301277969

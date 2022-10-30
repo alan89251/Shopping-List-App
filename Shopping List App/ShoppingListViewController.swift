@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ShoppingListViewController.swift
 //  Shopping List App
 //  Author: Chun Fung Suen
 //  Student ID: 301277969
@@ -10,7 +10,7 @@
 import UIKit
 
 /// ViewController of the shopping list content view
-class ViewController: UIViewController {
+class ShoppingListViewController: UIViewController {
     private var savedShoppingList = ShoppingList()
     private let shoppingListRepository = ShoppingListRepository()
     private var uiShoppinglist: [Int: UIShoppingListItem] = [:] /// KEY: row number. Store the row of ui controls of list items
