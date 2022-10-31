@@ -96,8 +96,15 @@ class ShoppingListViewController: UIViewController {
         savedShoppingList.setName(name: textShoppingListName.text!)
         for i in 0 ... uiShoppinglist.count-1 {
             var item: ShoppingListItem! = savedShoppingList.getItemByRow(rowNo: i)
-            item.setName(name: uiShoppinglist[i]!.getName())
-            item.setQuantity(quantity: uiShoppinglist[i]!.getQuantity())
+            // if item name is empty, discard any change of this item and do not save this item
+            if (uiShoppinglist[i]!.getName() == "") {
+                uiShoppinglist[i]!.setName(name: item.getName())
+                uiShoppinglist[i]!.setQuantity(quantity: item.getQuantity())
+            }
+            else {
+                item.setName(name: uiShoppinglist[i]!.getName())
+                item.setQuantity(quantity: uiShoppinglist[i]!.getQuantity())
+            }
         }
         shoppingListRepository.save(shoppingList: savedShoppingList)
         printShoppingListInDebugConsole(shoppingList: savedShoppingList)
