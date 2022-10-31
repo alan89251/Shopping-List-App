@@ -88,6 +88,10 @@ class ShoppingListViewController: UIViewController {
     
     /// save the shopping list to the user perference and print it in the debug console
     @IBAction func btnSave_onTouchUpInside(_ sender: UIButton) {
+        // if the shopping list name is empty, set a default name for it
+        if (textShoppingListName.text == nil || textShoppingListName.text! == "") {
+            textShoppingListName.text = "Shopping List"
+        }
         // set the values of the saved shopping list by the values got from the UIs
         savedShoppingList.setName(name: textShoppingListName.text!)
         for i in 0 ... uiShoppinglist.count-1 {

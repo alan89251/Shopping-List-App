@@ -86,11 +86,31 @@ class UIShoppingListItem {
     
     /// handle the swipe left gesture on the TextField of the item name
     @objc private func onSwipeLeftGesture(sender: UISwipeGestureRecognizer) {
+        // change the text field color and then restore it to show that the field is being swiped
+        let oriColor = textName.backgroundColor
+        UIView.animate(withDuration: 1, animations: { ()-> Void in
+            self.textName.backgroundColor = UIColor(red: CGFloat(93/255.0), green: CGFloat(64/255.0), blue: CGFloat(55/255.0), alpha: 1.0)
+        })
+        UIView.animate(withDuration: 1, animations: { ()-> Void in
+            self.textName.backgroundColor = oriColor
+        })
+        
+        // run the action trigger by this gesture
         doSwipeLeftGesture(self)
     }
     
     /// handle the swipe right gesture on the TextField of the item name
     @objc private func onSwipeRightGesture(sender: UISwipeGestureRecognizer) {
+        // change the text field color and then restore it to show that the field is being swiped
+        let oriColor = textName.backgroundColor
+        UIView.animate(withDuration: 1, animations: { ()-> Void in
+            self.textName.backgroundColor = UIColor(red: 1.0, green: CGFloat(152/255.0), blue: 0.0 , alpha: 1.0)
+        })
+        UIView.animate(withDuration: 1, animations: { ()-> Void in
+            self.textName.backgroundColor = oriColor
+        })
+        
+        // run the action trigger by this gesture
         doSwipeRightGesture(self)
     }
 }

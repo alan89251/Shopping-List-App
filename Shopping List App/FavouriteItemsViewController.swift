@@ -20,6 +20,7 @@ class FavouriteItemsViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    /// reload and update favourite items every time when the view is switched to
     override func viewDidAppear(_ animated: Bool) {
         favouriteItems = favouriteItemsRepository.load()
         showFavouriteItems() // show favourite items on the UI
